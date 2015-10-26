@@ -7,11 +7,14 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
 			console.log("i got the data i requested");
 			$scope.productlist = response;
 			$scope.product = '';
-			console.log($scope.productlist.length);
-			// for(i = 0; productlist.length; i++){
 
-			// }
-
+			var totals = 0;
+			var amount = $scope.productlist;
+			for(i = 0; i < amount.length; i++){
+				var total = parseInt(amount[i].quantity) * parseInt(amount[i].price)
+				totals += total;
+			};
+			$scope.totalamount = totals
 		});
 	};
 
