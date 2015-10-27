@@ -1,9 +1,4 @@
 myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
-  // photos.success(function(data) {
-  //   $scope.detail = data[$routeParams.id];
-  // });
-	// $scope.about = "lalalalalal"
-	// $('.main').empty();
 
 	console.log("hello from controller");
 
@@ -37,6 +32,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 		console.log(id);
 		$http.delete('/productlist/' + id).success(function(response){
 		refresh();
+		$('.addbutton').fadeIn(500);
 		});
 	};
 
@@ -44,16 +40,20 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 		console.log(id);
 		$http.get('/productlist/' + id).success(function(response){
 			$scope.product = response;
+			// $('.addbutton').attr("class", "animated fadeOut").css("display", "none");
+			$('.addbutton').fadeOut(500);
 		});
 	};
 
 	$scope.update = function(){
 		$http.put('/productlist/' + $scope.product._id, $scope.product).success(function(response){
 			refresh();
+			$('.addbutton').fadeIn(500);
 		});
 	};
 
 	$scope.clear = function(){
 		$scope.product = '';
+		$('.addbutton').fadeIn(500);
 	};
 }]);

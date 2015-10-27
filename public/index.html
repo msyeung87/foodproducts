@@ -3,63 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-	<title>Food Products</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<title>Food Products App</title>
 </head>
 <body>
-	<div class="container" ng-controller="AppCtrl">
-		<a href="#/home">Home</a>
-		<a href="#/about">About</a>
 
-		<h1>Food Products App</h1>
-		<!-- <table class="table main">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Quantity</th>
-					<th>Price (per quantity)</th>
-					<th>Total (qty*price)</th>
-					<th>&nbsp;</th>
-					<th>&nbsp;</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><input class="form-control" ng-model="product.name"></td>
-					<td><input class="form-control" ng-model="product.quantity"></td>
-					<td><input class="form-control" ng-model="product.price"></td>
-					<td>&nbsp;</td>
-					<td><button class="btn btn-primary" ng-click="addProduct()">Add Product</button></td>
-					<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="clear()">Clear</button></td>
-				</tr>
-				<tr ng-repeat="product in productlist">
-					<td>{{product.name}}</td>
-					<td>{{product.quantity | number}}</td>
-					<td>{{product.price | currency}}</td>
-					<td>{{product.quantity * product.price | currency}}</td>
-					<td><button class="btn btn-danger" ng-click="remove(product._id)">Delete</button></td>
-					<td><button class="btn btn-warning" ng-click="edit(product._id)">Edit</button></td>
-				</tr>
-				<tr>
-					<td><strong>TOTAL</strong></td>
-					<td>&nbsp;</td>
-					<td>&nbsp;</td>
-					<td>{{totalamount | currency}}</td>
-					<td>&nbsp;</td>
-				</tr>
+		<div class="header">
 			
+			<div class="row">
+				<!-- <div class="col-xs-9"> -->
+					<p class="animated zoomIn"><img class="logo" src="css/img/foodinventorylogo.png"></p>
+				<!-- </div> -->
+				<!-- <div class="col-xs-3 pull-right"> -->
+					<a href="#/home">Home</a>&nbsp;&nbsp;
+					<a href="#/about">About</a>
+				<!-- </div> -->
 
-			</tbody>
-		</table> -->
+			</div>
+		</div>
+	<div class="container" ng-controller="AppCtrl">
+		
+		<div ng-view></div>
 
-	<div ng-view></div>
+		<footer>
+		 	© Copyright 2015, <a href="www.mattyeung.com">Matthew Yeung</a>
+		</footer>
 
 	</div> <!-- end of controller -->
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
 
 	<!-- controller -->
 	<script src="controllers/controller.js"></script>
