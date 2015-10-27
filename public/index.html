@@ -15,9 +15,9 @@
 				<tr>
 					<th>Name</th>
 					<th>Quantity</th>
-					<th>Price</th>
-					<th>Total</th>
-					<th>Action</th>
+					<th>Price (per quantity)</th>
+					<th>Total (qty*price)</th>
+					<th>&nbsp;</th>
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -26,7 +26,7 @@
 					<td><input class="form-control" ng-model="product.name"></td>
 					<td><input class="form-control" ng-model="product.quantity"></td>
 					<td><input class="form-control" ng-model="product.price"></td>
-					<td>Qty*Price</td>
+					<td>&nbsp;</td>
 					<td><button class="btn btn-primary" ng-click="addProduct()">Add Product</button></td>
 					<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="clear()">Clear</button></td>
 				</tr>
@@ -53,8 +53,11 @@
 
 
 
-	</div>
+	</div> <!-- end of controller -->
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<!-- controller -->
 	<script src="controllers/controller.js"></script>
 </body>
 </html>
