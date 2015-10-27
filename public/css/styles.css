@@ -44,6 +44,11 @@ body {
 	border: 1px white solid;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
+	text-align: center;
+	margin-right: 10%;
+	margin-left: 10%;
+	padding-bottom: 30px;
+	margin-bottom: 180px;
 }
 
 footer{
@@ -55,6 +60,7 @@ footer{
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 
 /* unvisited link */
 a:link {

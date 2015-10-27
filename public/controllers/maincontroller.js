@@ -23,6 +23,6 @@ myApp.config(function ($routeProvider)
  	 });
 });
 
-myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http){
+myApp.controller('MainController', ['$scope', '$http', function($scope, $http){
 	
 }]);

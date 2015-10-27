@@ -42,6 +42,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 			$scope.product = response;
 			// $('.addbutton').attr("class", "animated fadeOut").css("display", "none");
 			$('.addbutton').fadeOut(500);
+			// $('.after').append("<button class='btn btn-primary'>Add Product</button>")
 		});
 	};
 
