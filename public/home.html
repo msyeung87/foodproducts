@@ -1,0 +1,41 @@
+<div class="container" ng-controller="HomeController">
+<table class="table main">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Price (per quantity)</th>
+					<th>Total (qty*price)</th>
+					<th>&nbsp;</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="form-control" ng-model="product.name"></td>
+					<td><input class="form-control" ng-model="product.quantity"></td>
+					<td><input class="form-control" ng-model="product.price"></td>
+					<td>&nbsp;</td>
+					<td><button class="btn btn-primary" ng-click="addProduct()">Add Product</button></td>
+					<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="clear()">Clear</button></td>
+				</tr>
+				<tr ng-repeat="product in productlist">
+					<td>{{product.name}}</td>
+					<td>{{product.quantity | number}}</td>
+					<td>{{product.price | currency}}</td>
+					<td>{{product.quantity * product.price | currency}}</td>
+					<td><button class="btn btn-danger" ng-click="remove(product._id)">Delete</button></td>
+					<td><button class="btn btn-warning" ng-click="edit(product._id)">Edit</button></td>
+				</tr>
+				<tr>
+					<td><strong>TOTAL</strong></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>{{totalamount | currency}}</td>
+					<td>&nbsp;</td>
+				</tr>
+			
+
+			</tbody>
+		</table>
+	</div>

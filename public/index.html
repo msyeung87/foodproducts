@@ -2,15 +2,18 @@
 <html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
 	<title>Food Products</title>
 </head>
 <body>
 	<div class="container" ng-controller="AppCtrl">
-			
+		<a href="#/home">Home</a>
+		<a href="#/about">About</a>
+
 		<h1>Food Products App</h1>
-		<table class="table">
+		<!-- <table class="table main">
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -48,16 +51,20 @@
 			
 
 			</tbody>
-		</table>
+		</table> -->
 
-
-
+	<div ng-view></div>
 
 	</div> <!-- end of controller -->
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+
 	<!-- controller -->
 	<script src="controllers/controller.js"></script>
+	<script src="controllers/aboutcontroller.js"></script>
+	<script src="controllers/homecontroller.js"></script>
+	
 </body>
 </html>
