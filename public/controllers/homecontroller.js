@@ -4,7 +4,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 
 	var refresh = function(){
 		$http.get('/productlist').success(function(response){
-			console.log("i got the data i requested");
+			// console.log("i got the data i requested");
 			$scope.productlist = response;
 			$scope.product = '';
 
@@ -21,7 +21,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 	refresh();
 
 	$scope.addProduct = function(){
-		console.log($scope.product)
+		// console.log($scope.product)
 		$http.post('/productlist', $scope.product).success(function(response){
 			console.log(response);
 			refresh();
@@ -29,7 +29,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 	};
 
 	$scope.remove = function(id){
-		console.log(id);
+		// console.log(id);
 		$http.delete('/productlist/' + id).success(function(response){
 		refresh();
 		$('.addbutton').fadeIn(500);
@@ -37,7 +37,7 @@ myApp.controller('HomeController', ['$scope', '$http', function($scope, $http) {
 	};
 
 	$scope.edit = function(id){
-		console.log(id);
+		// console.log(id);
 		$http.get('/productlist/' + id).success(function(response){
 			$scope.product = response;
 			// $('.addbutton').attr("class", "animated fadeOut").css("display", "none");

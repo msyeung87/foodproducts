@@ -41,7 +41,7 @@ app.get('/productlist/:id', function(req, res){
 app.put('/productlist/:id', function(req, res){
 	var id = req.params.id;
 	db.productlist.findAndModify({query: {_id: mongojs.ObjectId(id)},
-		update: {$set: {name: req.body.name, quantity: req.body.quantity, price: req.body.price}},
+		update: {$set: {name: req.body.name, quantity: req.body.quantity, price: req.body.price, expire: req.body.expire}},
 		new: true}, function(err, doc){
 			res.json(doc);
 		});

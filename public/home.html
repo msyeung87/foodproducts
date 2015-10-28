@@ -6,7 +6,9 @@
 				<th>Name</th>
 				<th>Quantity</th>
 				<th>Price (per quantity)</th>
-				<th>Total (qty*price)</th>
+				<th>Expiration Date</th>
+				<th class="subtotal">Total (qty*price)</th>
+				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 			</tr>
@@ -16,27 +18,36 @@
 				<td><input class="form-control" ng-model="product.name"></td>
 				<td><input class="form-control" ng-model="product.quantity"></td>
 				<td><input class="form-control" ng-model="product.price"></td>
+				<td><input class="form-control" ng-model="product.expire" placeholder="mm/dd/yyyy"></td></td>
 				<td>&nbsp;</td>
-				<td class="after"><button class="addbutton btn btn-primary" ng-click="addProduct()">Add Product</button></td>
+				<td class="after"><button class="addbutton btn btn-primary" ng-click="addProduct()">Add</button></td>
 				<td>
 					<button class="btn btn-info" ng-click="update()">Update</button>
-					&nbsp;&nbsp;
-					<button class="btn btn-info" ng-click="clear()">Clear</button>
+					
+				</td>
+				<td>
+					<button class="btn btn-success" ng-click="clear()">Clear</button>
+					
 				</td>
 			</tr>
 			<tr ng-repeat="product in productlist">
 				<td>{{product.name | capitalizefirst}}</td>
 				<td>{{product.quantity | number}}</td>
 				<td>{{product.price | currency}}</td>
-				<td>{{product.quantity * product.price | currency}}</td>
-				<td><button class="btn btn-danger" ng-click="remove(product._id)">Delete</button></td>
-				<td><button class="btn btn-warning" ng-click="edit(product._id)">Edit</button></td>
+				<td>{{product.expire}}</td>
+				<td class="subtotal">{{product.quantity * product.price | currency}}</td>
+				<td class="buttons"><button class="btn btn-danger" ng-click="remove(product._id)">Delete</button></td>
+				<td class="buttons"><button class="btn btn-warning" ng-click="edit(product._id)">Edit</button></td>
+				<td>&nbsp;</td>
 			</tr>
 			<tr>
 				<td><strong>TOTAL</strong></td>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
-				<td>{{totalamount | currency}}</td>
+				<td>&nbsp;</td>
+				<td class="subtotal">{{totalamount | currency}}</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
 		</tbody>
